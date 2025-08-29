@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: var(--roboto);
+}
+
+:root {
+    --poppins: "Poppins", sans-serif;
+    --roboto: "Roboto", sans-serif;
+    --color01: #fffffe;
+    --color02: #151100;
+    --color03: #1f1d17;
+    --color04: #e1b755;
+    --color05: #ffd54f;
+    --color06: #ffb300;
+    --color07: #dcb860;
+    --color08: #dcc289;
+    --color09: #1e1707bd;
+    --color10: #dcc28936;
+    --color11: #151100c5;
+    --color12: #dcc2891c;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.ampere-header-container {
+    background-color: var(--color02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(https://i.ibb.co/dsv6bfG4/Ampere-Fachada-Mobile11.png);
+    background-size: cover;
+    background-position: center top;
+    padding: 1em;
+}
+
+.logo-ampere-header {
+    width: 150px;
+    margin-top: 25em;
+    margin-bottom: .9em;
+}
+
+.ampere-headline {
+    font-family: var(--poppins);
+    color: var(--color01);
+    font-weight: 600;
+    font-size: 1.3em;
+    width: 280px;
+    text-align: center;
+    line-height: 1.2em;
+    margin-top: .5em;
+}
+
+.header-description {
+    color: var(--color01);
+    font-size: .8em;
+    text-align: center;
+    width: 300px;
+    font-weight: 400;
+    margin-top: .5em;
+}
+
+.header-lead-capture-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1em;
+    gap: .5em;
+}
+
+.header-input-box {
+    width: 100%;
+    background-color: var(--color03);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    border-radius: .4em;
+    border: var(--color04) 1px solid;
+}
+
+.header-lead-input-default {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--color01);
+}
+
+.icon-input-header {
+    color: var(--color04);
+    font-size: 1.2em;
+}
+
+
+.header-button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-image: linear-gradient(90deg, var(--color06), var(--color05));
+    background-color: var(--color05);
+    border-radius: .4em;
+    color: var(--color02);
+    font-weight: bold;
+    font-size: .9em;
+    cursor: pointer;
+    box-shadow: 0px 3px 0px 0px var(--color06);
+    transition: transform 0.2s ease;
+    margin-bottom: 3em;
+}
+
+.header-button:hover {
+    transform: scale(1.05);
+}
+
+.text-slider-container {
+    height: 80px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--color07);
+    display: flex;
+    align-items: center;
+}
+
+.slider-text {
+    font-weight: 600;
+    letter-spacing: .2em;
+    display: inline-block;
+    animation: slide 80s linear infinite;
+    font-size: 1em;
+    color: var(--color01);
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.about-the-project-container {
+    background-color: var(--color02);
+    padding: 1.3em;
+}
+
+.about-the-project-texts {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: 400;
+    color: var(--color01);
+}
+
+.text-emphasis {
+    color: var(--color08);
+}
+
+.paragraph-description {
+    color: var(--color01);
+    font-size: .9em;
+    font-weight: 400;
+}
+
+.paragraph-box {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 300px;
+}
+
+.about-the-project-cards-container {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+.about-project-card {
+    background-color: var(--color09);
+    padding: 1.5em;
+    border-radius: .3em;
+    border: var(--color10) .05px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.card-icon-box {
+    background-color: var(--color08);
+    width: 50px;
+    height: 50px;
+    border-radius: .2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon {
+    font-weight: bold;
+    color: var(--color02);
+    font-size: 1.5em;
+}
+
+.card-title {
+    color: var(--color01);
+}
+
+.card-paragraph {
+    color: var(--color01);
+    font-size: .8em;
+    line-height: 1.5em;
+}
+
+.about-project-video-container {
+    background-color: var(--color02);
+    padding: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: .5em;
+    width: 100%;
+    max-width: 499px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about-the-video-container {
+    background-color: var(--color02);
+    padding: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(transparent 30%, var(--color12) 50%, transparent 70%);
+}
+
+
+.about-the-apartaments-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 2em;
+    border-radius: .5em;
+    border: var(--color10) .50px solid;
+    background-color: var(--color09);
+}
+
+.paragraph-center {
+    text-align: center;
+}
+
+.section-title-2nd-option {
+    color: var(--color01);
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.about-the-apartaments-cta-btn {
+    background-color: var(--color08);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    width: 65%;
+    height: 45px;
+    border-radius: 2em;
+    box-shadow: 0px 3px 0px 0px var(--color10);
+}
+
+.about-apartaments-mini-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1em;
+}
+
+.about-apartaments-mini-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    border: var(--color10) .50px solid;
+    background-color: var(--color11);
+    padding: 1em;
+    border-radius: .5em;
+    width: 80%;
+}
+
+.p-mini-card {
+    font-weight: bold;
+    font-size: .8em;
+}
+
+.unique-points-sale-container {
+    padding: 1.2em;
+    background-color: var(--color02);
+    background-image: linear-gradient(transparent 30%, var(--color12) 50%, transparent 70%);
+}
+
+.unique-points-sale-image {
+    width: 100%;
+    border-radius: .5em;
+}
+
+.unique-points-section-title {
+    margin-top: 1em;
+    color: var(--color01);
+    font-size: 1.5em;
+}
+
+.unique-points-sale-mini-cards-container {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.unique-points-mini-card {
+    padding: 1em;
+    border-radius: .5em;
+    border: var(--color10) .50px solid;
+    background-color: var(--color09);
+    height: 135px;
+    width: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.mini-card-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color08);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.mini-card-icon {
+    color: var(--color02);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.mini-card-text {
+    color: var(--color01);
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.call-to-action-container {
+    background-color: var(--color02);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+.slider-container {
+    margin-top: 3em;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-images {
+    gap: .2em;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-images img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 39px;
+    height: 39px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1em;
+    display: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.call-to-action-texts,
+.call-to-action-cards-container {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1.2em;
+    width: 100%;
+}
+
+.call-to-action-button {
+    background-color: var(--color08);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    width: 100%;
+    height: 45px;
+    border-radius: 2em;
+    box-shadow: 0px 3px 0px 0px var(--color10);
+}
+
+.call-to-action-card {
+    padding: 1em;
+    border-radius: .5em;
+    border: var(--color10) .50px solid;
+    background-color: var(--color09);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.call-to-action-gallery-container {
+    position: relative;
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3em;
+    width: 100%;
+    overflow: hidden; /* garante que nada "vaze" */
+}
+
+.call-to-action-gallery-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50em; /* altura do degradê */
+    background: linear-gradient(to top, var(--color02) 10%, transparent);
+    pointer-events: none; /* não atrapalha cliques no botão */
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-gallery {
+    position: relative; /* garante que fique acima do fade */
+    top: -6em;
+    z-index: 2;
+    background-color: var(--color08);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    width: 40%;
+    height: 45px;
+    border-radius: 2em;
+    box-shadow: 0px 3px 0px 0px var(--color10);
+}
+
