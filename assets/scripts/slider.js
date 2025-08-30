@@ -8,141 +8,116 @@ let startX = 0;
 let endX = 0;
 
 function showSlide() {
-    sliderImages.style.transform = `translateX(${-index * 101}%)`;
+  sliderImages.style.transform = `translateX(${-index * 101}%)`;
 }
 
 nextBtn.addEventListener('click', () => {
-    index++;
-    if (index >= images.length) index = 0;
-    showSlide();
+  index++;
+  if (index >= images.length) index = 0;
+  showSlide();
 });
 
 prevBtn.addEventListener('click', () => {
-    index--;
-    if (index < 0) index = images.length - 1;
-    showSlide();
+  index--;
+  if (index < 0) index = images.length - 1;
+  showSlide();
 });
 
-
-// Detecta início do toque
 sliderImages.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
+  startX = e.touches[0].clientX;
 });
 
-// Detecta fim do toque
 sliderImages.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    handleSwipe();
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
 });
 
 function handleSwipe() {
-    let diff = startX - endX;
+  let diff = startX - endX;
 
-    if (diff > 50) {
-        // deslizou para a esquerda → próximo
-        index++;
-        if (index >= images.length) index = 0; // volta pro início
-        showSlide();
-    } else if (diff < -50) {
-        // deslizou para a direita → anterior
-        index--;
-        if (index < 0) index = images.length - 1; // volta pro último
-        showSlide();
-    }
-}
-
-// autoplay (opcional)
-setInterval(() => {
+  if (diff > 50) {
     index++;
     if (index >= images.length) index = 0;
     showSlide();
+  } else if (diff < -50) {
+    index--;
+    if (index < 0) index = images.length - 1; 
+    showSlide();
+  }
+}
+
+setInterval(() => {
+  index++;
+  if (index >= images.length) index = 0;
+  showSlide();
 }, 4000);
 
 
-// Slider plants
-const plantsData = {
-  262: [
-    "https://i.ibb.co/HDQmRgfK/Planta-Tipo-com-Diferenciais-262-M.jpg",
-    "https://i.ibb.co/CD616Dw/Planta-Opcao-3-Decorado-262-M.jpg",
-    "https://i.ibb.co/twfXhyy1/Planta-Opcao-2-262-M.jpg",
-    "https://i.ibb.co/ds1srcSh/Planta-Opcao-1-262-M.jpg",
-    "https://i.ibb.co/6JNgMbjD/Planta-Padrao-262-M.jpg"
-  ],
-  482: [
-    "https://i.ibb.co/6f2nxgL/Planta-Cobertura-Duplex-Superior-482-M.jpg",
-    "https://i.ibb.co/PsWyr3dw/Planta-Cobertura-Duplex-Inferior-482-M.jpg"
-  ]
-};
+document.addEventListener("DOMContentLoaded", () => {
+    const typeButtons = document.querySelectorAll(".plants-type-btn");
+    const sliders = document.querySelectorAll(".plants-slider");
+    const prevBtn = document.querySelector(".prev-plant");
+    const nextBtn = document.querySelector(".next-plant");
 
-const plantsInfo = {
-  262: [
-    "Planta Tipo com Diferenciais 262 M²",
-    "Planta Opção 3 Decorado 262 M²",
-    "Planta Opção 2 262 M²",
-    "Planta Opção 1 262 M²",
-    "Planta Padrão 262 M²"
-  ],
-  482: [
-    "Planta Cobertura Duplex Superior 482 M²",
-    "Planta Cobertura Duplex Inferior 482 M²"
-  ]
-};
+    const currentIndexes = {};
 
-const plantSlider = document.querySelector(".plants-slider");
-const prevBtnPlants = document.querySelector(".prev-plant");
-const nextBtnPlants = document.querySelector(".next-plant");
-const typeBtns = document.querySelectorAll(".plants-type-btn");
+    sliders.forEach(slider => {
+        currentIndexes[slider.id] = 0;
+    });
 
-let currentType = "262";
-let currentPlantIndex = 0;
+    function updateSlider(sliderId) {
+        const slider = document.getElementById(sliderId);
+        const index = currentIndexes[sliderId];
+        const offset = -index * 101;
+        slider.style.transform = `translateX(${offset}%)`;
+    }
 
-function loadPlantImages(type) {
-  plantSlider.innerHTML = "";
-  plantsData[type].forEach((src, index) => {
-    const slide = document.createElement("div");
-    slide.classList.add("plant-slide");
+    typeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            typeButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
 
-    const img = document.createElement("img");
-    img.src = src;
+            const selectedType = btn.dataset.type;
 
-    const info = document.createElement("div");
-    info.classList.add("plant-info");
-    info.innerText = plantsInfo[type][index];
+            sliders.forEach(s => s.style.display = "none");
+            const activeSlider = document.getElementById("plantSlider" + selectedType);
+            activeSlider.style.display = "flex";
+            currentIndexes[activeSlider.id] = 0;
+            updateSlider(activeSlider.id);
+        });
+    });
+    function getActiveSliderId() {
+        const activeSlider = Array.from(sliders).find(s => s.style.display !== "none");
+        return activeSlider ? activeSlider.id : null;
+    }
 
-    slide.appendChild(img);
-    slide.appendChild(info);
-    plantSlider.appendChild(slide);
-  });
+    nextBtn.addEventListener("click", () => {
+        const activeSliderId = getActiveSliderId();
+        if (!activeSliderId) return;
 
-  plantSlider.style.transform = "translateX(0)";
-  currentPlantIndex = 0;
-}
-function showPlantSlide() {
-  plantSlider.style.transform = `translateX(${-currentPlantIndex * 100}%)`;
-}
+        const slider = document.getElementById(activeSliderId);
+        const slides = slider.querySelectorAll(".plant-slide-info-image");
 
-prevBtnPlants.addEventListener("click", () => {
-  if (currentPlantIndex > 0) {
-    currentPlantIndex--;
-    showPlantSlide();
-  }
+        currentIndexes[activeSliderId]++;
+        if (currentIndexes[activeSliderId] >= slides.length) {
+            currentIndexes[activeSliderId] = 0; // loop
+        }
+        updateSlider(activeSliderId);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        const activeSliderId = getActiveSliderId();
+        if (!activeSliderId) return;
+
+        const slider = document.getElementById(activeSliderId);
+        const slides = slider.querySelectorAll(".plant-slide-info-image");
+
+        currentIndexes[activeSliderId]--;
+        if (currentIndexes[activeSliderId] < 0) {
+            currentIndexes[activeSliderId] = slides.length - 1;
+        }
+        updateSlider(activeSliderId);
+    });
+
+    updateSlider("plantSlider262");
 });
-
-nextBtnPlants.addEventListener("click", () => {
-  if (currentPlantIndex < plantsData[currentType].length - 1) {
-    currentPlantIndex++;
-    showPlantSlide();
-  }
-});
-
-typeBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    typeBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentType = btn.dataset.type;
-    loadPlantImages(currentType);
-  });
-});
-
-// Inicializa com 262m²
-loadPlantImages(currentType);
