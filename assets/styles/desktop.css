@@ -1,6 +1,369 @@
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
 
     .ampere-header-container {
-        background-image: url(https://i.ibb.co/ks0rrBVN/20-Detalhe-da-fachada.jpg);
+        background-image: url(https://i.ibb.co/G4cW2Dwp/ampere-header.jpg);
+        background-size: cover;
+        background-position: center top;
+        padding: 1.2em 0em;
     }
+
+    .logo-ampere-header {
+        width: 220px;
+    }
+
+    .ampere-headline {
+        font-size: 3em;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .header-description {
+        font-size: 1em;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .header-lead-capture-form {
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 1em;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .header-input-box {
+        background-color: var(--color16);
+    }
+
+    .header-lead-input-default {
+        width: 100%;
+    }
+
+    .header-button {
+        margin-left: .5em;
+        height: 55px;
+        margin-bottom: 0em;
+    }
+
+    .about-the-project-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2em 0em;
+    }
+
+    .about-the-project-texts {
+        flex-direction: row;
+        align-items: center;
+        gap: 7em;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .section-title {
+        font-size: 2.6em;
+        width: 400px;
+    }
+
+    .paragraph-box {
+        width: 100%;
+    }
+
+    .paragraph-description {
+        font-size: 1.2em;
+    }
+
+    .about-the-project-cards-container {
+        margin-top: 8em;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1200px;
+        gap: 10px;
+    }
+
+    .about-project-card {
+        padding: 2.4em;
+        width: 590px;
+    }
+
+    .about-project-video-container {
+        padding: 1.3em 0;
+    }
+
+    .video-container {
+        padding-bottom: 40em;
+        max-width: 1200px;
+    }
+
+    .video-container iframe {
+        width: 1200px;
+        height: 675px;
+        border-radius: 1em;
+    }
+
+    .about-the-video-container {
+        padding: 1.2em 0;
+        background-image: none;
+    }
+
+    .about-the-apartaments-content {
+        width: 100%;
+        max-width: 1200px;
+        flex-direction: row;
+        padding: 4em;
+        gap: 6.6em;
+    }
+
+    .about-apartaments-texts {
+        align-items: flex-start;
+        gap: 1em;
+        width: 550px;
+    }
+
+    .paragraph-description-2nd {
+        text-align: left;
+    }
+
+    .section-title-2nd-option {
+        font-size: 2.3em;
+        text-align: left;
+    }
+
+    .about-apartaments-mini-cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .about-apartaments-mini-card {
+        padding: 1em;
+        width: 310px;
+        height: 200px;
+    }
+
+
+    .unique-points-sale-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 2em;
+        padding: 6em 0;
+        width: 100%;
+        max-width: 1200px;
+        justify-self: center;
+        background-image: radial-gradient(circle, var(--color12) 10%, transparent 50%);
+    }
+
+    .unique-points-sale-image {
+        width: auto;
+        height: 750px;
+        border-radius: .5em;
+    }
+
+    .unique-points-section-title {
+        margin-top: 0;
+        font-size: 2.8em;
+    }
+
+    .unique-points-mini-card {
+        height: 98px;
+        width: 318px;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .slider-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slider-images img {
+        height: 500px;
+        width: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .prev,
+    .next {
+        display: block;
+    }
+
+    .call-to-action-information {
+        margin: 2em 0;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+    }
+
+    .call-to-action-button {
+        align-self: start;
+        width: 70%;
+    }
+
+    .gallery-img {
+        width: 49%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    .call-to-action-gallery-container {
+        max-width: 1200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .btn-gallery {
+        width: 10%;
+    }
+
+    .get-know-plants-container {
+        padding: 1.2em 0;
+    }
+
+    .plants-types {
+        max-width: 1200px;
+        flex-direction: row;
+    }
+
+    .plants-type-btn {
+        width: 20%;
+    }
+
+    .info-btn {
+        width: 20%;
+    }
+
+
+    .plants-slider-container {
+        width: 100%;
+        max-width: 1200px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .plants-info-text {
+        background-color: #cfcfcf91;
+        padding: .5em 4em;
+        border-radius: 3em;
+        font-size: 1em;
+    }
+
+    .plant-slide-image {
+        border-radius: 1em;
+        height: 600px;
+    }
+
+    .contacts-informations-container {
+        padding: 1.2em 0;
+        background-image: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .iframe-google-maps {
+        height: 500px;
+        width: 1200px;
+        border-radius: .7em;
+    }
+
+    .contacts-information-content {
+        margin-top: -7em;
+        gap: 1em;
+        padding: 2em;
+        width: 800px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .section-title-3nd-option {
+        font-size: 2em;
+    }
+
+    .contacts-container {
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .contact-text {
+        text-align: center;
+    }
+
+    .brooklin-image {
+        margin-top: 15em;
+        margin-bottom: -32em;
+        width: 1000px;
+        height: 550px;
+        background-image: url(https://i.ibb.co/d4vzFTmy/ponte-desktop.jpg);
+        background-position: center bottom;
+        box-shadow: 0px 20px 50px #dcc28927;
+    }
+
+    .about-brooklin {
+        top: -12em;
+        left: -12em;
+        position: relative;
+        width: 530px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .about-brooklin>p {
+        font-size: 15px;
+        line-height: 1.8em;
+    }
+
+    .hoster-details-container {
+        align-self: center;
+        max-width: 1200px;
+        justify-content: center;
+        margin-bottom: 4em;
+    }
+
+    .hoster-details-container>h2 {
+        text-align: center;
+    }
+
+    .hoster-details-container>.contatcs-hor-divider {
+        align-self: center;
+        width: 60%;
+    }
+
+    .lucas-lehm-stamp-image {
+        width: 350px;
+    }
+
+    .hoster-informations {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3em;
+    }
+
+    .p-center {
+        text-align: left;
+    }
+
+    .comment {
+        padding: 1em;
+        border-radius: .5em;
+        background-color: var(--color13);
+        gap: 1em;
+        width: 350px;
+    }
+
+    .doubts-container {
+        padding: 1.2em 0;
+    }
+
+    .doubts-main-content {
+        padding: 1em 3em;
+        width: 700px;
+    }
+
 }

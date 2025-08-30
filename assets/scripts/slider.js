@@ -8,18 +8,22 @@ let startX = 0;
 let endX = 0;
 
 function showSlide() {
-  sliderImages.style.transform = `translateX(${-index * 101}%)`;
+  if (window.matchMedia("(min-width: 1200px)").matches) {
+    sliderImages.style.transform = `translateX(${-index * 50}%)`;
+  } else {
+    sliderImages.style.transform = `translateX(${-index * 101}%)`;
+  }
 }
 
 nextBtn.addEventListener('click', () => {
   index++;
-  if (index >= images.length) index = 0;
+  if (index > images.length - 2) index = 0; // 👈 evita espaço em branco
   showSlide();
 });
 
 prevBtn.addEventListener('click', () => {
   index--;
-  if (index < 0) index = images.length - 1;
+  if (index < 0) index = images.length - 2; // 👈 volta pro último par
   showSlide();
 });
 
@@ -41,7 +45,7 @@ function handleSwipe() {
     showSlide();
   } else if (diff < -50) {
     index--;
-    if (index < 0) index = images.length - 1; 
+    if (index < 0) index = images.length - 1;
     showSlide();
   }
 }
@@ -50,74 +54,78 @@ setInterval(() => {
   index++;
   if (index >= images.length) index = 0;
   showSlide();
-}, 4000);
+}, 10000);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const typeButtons = document.querySelectorAll(".plants-type-btn");
-    const sliders = document.querySelectorAll(".plants-slider");
-    const prevBtn = document.querySelector(".prev-plant");
-    const nextBtn = document.querySelector(".next-plant");
+  const typeButtons = document.querySelectorAll(".plants-type-btn");
+  const sliders = document.querySelectorAll(".plants-slider");
+  const prevBtn = document.querySelector(".prev-plant");
+  const nextBtn = document.querySelector(".next-plant");
 
-    const currentIndexes = {};
+  const currentIndexes = {};
 
-    sliders.forEach(slider => {
-        currentIndexes[slider.id] = 0;
+  sliders.forEach(slider => {
+    currentIndexes[slider.id] = 0;
+  });
+
+  function updateSlider(sliderId) {
+    const slider = document.getElementById(sliderId);
+    const index = currentIndexes[sliderId];
+
+    // Sempre 1 slide por vez
+    const offset = -index * 100.2;
+
+    slider.style.transform = `translateX(${offset}%)`;
+  }
+
+
+  typeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      typeButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const selectedType = btn.dataset.type;
+
+      sliders.forEach(s => s.style.display = "none");
+      const activeSlider = document.getElementById("plantSlider" + selectedType);
+      activeSlider.style.display = "flex";
+      currentIndexes[activeSlider.id] = 0;
+      updateSlider(activeSlider.id);
     });
+  });
+  function getActiveSliderId() {
+    const activeSlider = Array.from(sliders).find(s => s.style.display !== "none");
+    return activeSlider ? activeSlider.id : null;
+  }
 
-    function updateSlider(sliderId) {
-        const slider = document.getElementById(sliderId);
-        const index = currentIndexes[sliderId];
-        const offset = -index * 101;
-        slider.style.transform = `translateX(${offset}%)`;
+  nextBtn.addEventListener("click", () => {
+    const activeSliderId = getActiveSliderId();
+    if (!activeSliderId) return;
+
+    const slider = document.getElementById(activeSliderId);
+    const slides = slider.querySelectorAll(".plant-slide-info-image");
+
+    currentIndexes[activeSliderId]++;
+    if (currentIndexes[activeSliderId] >= slides.length) {
+      currentIndexes[activeSliderId] = 0; // loop
     }
+    updateSlider(activeSliderId);
+  });
 
-    typeButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            typeButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+  prevBtn.addEventListener("click", () => {
+    const activeSliderId = getActiveSliderId();
+    if (!activeSliderId) return;
 
-            const selectedType = btn.dataset.type;
+    const slider = document.getElementById(activeSliderId);
+    const slides = slider.querySelectorAll(".plant-slide-info-image");
 
-            sliders.forEach(s => s.style.display = "none");
-            const activeSlider = document.getElementById("plantSlider" + selectedType);
-            activeSlider.style.display = "flex";
-            currentIndexes[activeSlider.id] = 0;
-            updateSlider(activeSlider.id);
-        });
-    });
-    function getActiveSliderId() {
-        const activeSlider = Array.from(sliders).find(s => s.style.display !== "none");
-        return activeSlider ? activeSlider.id : null;
+    currentIndexes[activeSliderId]--;
+    if (currentIndexes[activeSliderId] < 0) {
+      currentIndexes[activeSliderId] = slides.length - 1;
     }
+    updateSlider(activeSliderId);
+  });
 
-    nextBtn.addEventListener("click", () => {
-        const activeSliderId = getActiveSliderId();
-        if (!activeSliderId) return;
-
-        const slider = document.getElementById(activeSliderId);
-        const slides = slider.querySelectorAll(".plant-slide-info-image");
-
-        currentIndexes[activeSliderId]++;
-        if (currentIndexes[activeSliderId] >= slides.length) {
-            currentIndexes[activeSliderId] = 0; // loop
-        }
-        updateSlider(activeSliderId);
-    });
-
-    prevBtn.addEventListener("click", () => {
-        const activeSliderId = getActiveSliderId();
-        if (!activeSliderId) return;
-
-        const slider = document.getElementById(activeSliderId);
-        const slides = slider.querySelectorAll(".plant-slide-info-image");
-
-        currentIndexes[activeSliderId]--;
-        if (currentIndexes[activeSliderId] < 0) {
-            currentIndexes[activeSliderId] = slides.length - 1;
-        }
-        updateSlider(activeSliderId);
-    });
-
-    updateSlider("plantSlider262");
+  updateSlider("plantSlider262");
 });

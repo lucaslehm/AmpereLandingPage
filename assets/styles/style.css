@@ -31,7 +31,7 @@ a {
     --color13: #222;
     --color14: #ac935e;
     --color15: #412906;
-    --color16: #15110071;
+    --color16: #15110036;
 }
 
 
@@ -134,7 +134,7 @@ body {
 }
 
 .header-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .text-slider-container {
@@ -148,12 +148,12 @@ body {
 }
 
 .slider-text {
+    display: inline-block;
     font-weight: 600;
     letter-spacing: .2em;
-    display: inline-block;
-    animation: slide 220s linear infinite;
     font-size: 1em;
     color: var(--color01);
+    animation: slide 200s linear infinite;
 }
 
 @keyframes slide {
@@ -162,7 +162,7 @@ body {
     }
 
     to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
@@ -188,6 +188,12 @@ body {
 }
 
 .paragraph-description {
+    color: var(--color01);
+    font-size: .9em;
+    font-weight: 400;
+}
+
+.paragraph-description-2nd {
     color: var(--color01);
     font-size: .9em;
     font-weight: 400;
@@ -521,7 +527,6 @@ body {
     gap: .3em;
     width: 100%;
     overflow: hidden;
-    /* garante que nada "vaze" */
 }
 
 .call-to-action-gallery-container::after {
@@ -545,7 +550,6 @@ body {
 
 .btn-gallery {
     position: relative;
-    /* garante que fique acima do fade */
     top: -6em;
     z-index: 2;
     background-color: var(--color08);
@@ -697,7 +701,6 @@ body {
 .iframe-google-maps {
     height: 300px;
     width: 100%;
-    ;
     border-radius: .7em;
 }
 
@@ -746,6 +749,13 @@ body {
 }
 
 .contact-icon {
+    color: var(--color08);
+}
+
+.paragraph-description-3rd {
+    font-weight: 600;
+    font-size: .8em;
+    text-align: center;
     color: var(--color01);
 }
 
@@ -779,8 +789,13 @@ body {
 }
 
 .brooklin-image {
+    background-color: var(--color08);
     width: 100%;
     border-radius: .5em;
+    height: 500px;
+    background-image: url(https://i.ibb.co/Zp3DhkXj/ponte-brooklin.jpg);
+    background-position: center top;
+    background-size: cover;
 }
 
 .about-the-hoster-content {
@@ -802,6 +817,10 @@ body {
 .lucas-lehm-stamp-image {
     width: 100%;
     border-radius: .5em;
+}
+
+.p-center {
+    text-align: center;
 }
 
 .google-stars-content {
