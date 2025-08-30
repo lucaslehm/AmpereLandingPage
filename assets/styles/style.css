@@ -7,6 +7,12 @@
     font-family: var(--roboto);
 }
 
+a {
+    text-decoration: none;
+    color: var(--color01);
+    cursor: pointer;
+}
+
 :root {
     --poppins: "Poppins", sans-serif;
     --roboto: "Roboto", sans-serif;
