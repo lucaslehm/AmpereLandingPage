@@ -854,6 +854,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1em;
 }
 
 .comment {
@@ -884,6 +885,8 @@ body {
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    background-position: center;
+    background-size: cover;
 }
 
 .user-name {
@@ -1033,9 +1036,32 @@ body {
 .WhatsApp-btn {
     bottom: 10px;
     right: 5%;
+    box-shadow: 0px 0px 16px var(--color12);
 }
 
 .back-to-top-btn>i,
 .WhatsApp-btn>i {
     font-size: 1.5em;
+}
+
+#backToTop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important; 
+  -webkit-text-fill-color: var(--color01) !important;
+  transition: background-color 5000s ease-in-out 0s; 
+}
+
+input:autofill {
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--color01) !important;
 }

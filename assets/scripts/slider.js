@@ -17,13 +17,13 @@ function showSlide() {
 
 nextBtn.addEventListener('click', () => {
   index++;
-  if (index > images.length - 2) index = 0; // 👈 evita espaço em branco
+  if (index > images.length - 2) index = 0; 
   showSlide();
 });
 
 prevBtn.addEventListener('click', () => {
   index--;
-  if (index < 0) index = images.length - 2; // 👈 volta pro último par
+  if (index < 0) index = images.length - 2;  
   showSlide();
 });
 

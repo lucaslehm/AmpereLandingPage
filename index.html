@@ -24,15 +24,18 @@
     </noscript>
     <link rel="stylesheet" href="assets/styles/desktop.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 
 <body>
     <!-- ================= BOTOES FIXADOS ================= -->
-    <div class="back-to-top-btn" role="button" aria-label="Voltar ao topo" title="Voltar ao topo">
+    <div id="backToTop" class="back-to-top-btn scale" role="button" aria-label="Voltar ao topo" title="Voltar ao topo">
         <i class="ri-arrow-up-line" aria-hidden="true"></i>
     </div>
 
-    <div class="WhatsApp-btn" role="button" aria-label="Conversar no WhatsApp" title="WhatsApp">
+    <div class="WhatsApp-btn scale" role="button" aria-label="Conversar no WhatsApp" title="WhatsApp">
         <i class="ri-whatsapp-line" aria-hidden="true"></i>
     </div>
 
@@ -49,7 +52,7 @@
         </p>
 
         <h2 id="leadFormTitle" class="sr-only">Formulário de agendamento de visita</h2>
-        <form action="/" method="post" class="header-lead-capture-form" aria-labelledby="leadFormTitle">
+        <form id="leadForm" class="header-lead-capture-form" aria-labelledby="leadFormTitle">
 
             <div class="header-input-box">
                 <label for="leadNameAndLastname" class="sr-only">Nome e Sobrenome</label>
@@ -113,7 +116,7 @@
         </section>
 
         <!-- ================= SOBRE O AMPARE ================= -->
-        <section class="about-the-project-container">
+        <section data-aos="fade-up" class="about-the-project-container">
             <div class="about-the-project-texts">
                 <h2 class="section-title">
                     Conheça o Empreendimento <span class="text-emphasis">Ampère Brooklin</span>
@@ -198,7 +201,7 @@
             </div>
         </section>
         <!-- ================= VIDEO DE APRESENTACAO ================= -->
-        <section class="about-project-video-container" aria-labelledby="video-title">
+        <section data-aos="fade-up"  class="about-project-video-container" aria-labelledby="video-title">
             <h2 id="video-title" class="sr-only">Vídeo sobre o empreendimento Ampère Brooklin</h2>
 
             <div class="video-container">
@@ -213,7 +216,7 @@
             </div>
         </section>
         <!-- ================= SOBRE OS APARTAMENTOS ================= -->
-        <section class="about-the-video-container" aria-labelledby="apartamentos-title">
+        <section data-aos="fade-up" class="about-the-video-container" aria-labelledby="apartamentos-title">
             <div class="about-the-apartaments-content">
 
                 <div class="about-apartaments-texts">
@@ -223,7 +226,7 @@
                     <p class="paragraph-description-2nd paragraph-center">
                         Aptos de altíssimo padrão em localização nobre!
                     </p>
-                    <button class="about-the-apartaments-cta-btn">
+                    <button class="scale about-the-apartaments-cta-btn">
                         Agendar visita
                     </button>
                 </div>
@@ -262,7 +265,7 @@
             </div>
         </section>
         <!-- ================= PONTOS UNICOS DE VENDA ================= -->
-        <section class="unique-points-sale-container" aria-labelledby="unique-points-title">
+        <section data-aos="fade-up" class="unique-points-sale-container" aria-labelledby="unique-points-title">
 
             <img class="unique-points-sale-image" src="https://i.ibb.co/9krgYxPL/Ampere-Fachada-Mobile.webp"
                 alt="Fachada do empreendimento Ampère Brooklin">
@@ -342,7 +345,7 @@
             </div>
         </section>
         <!-- ================= CALL TO ACTION ================= -->
-        <section class="call-to-action-container" aria-labelledby="cta-title">
+        <section data-aos="fade-up" class="call-to-action-container" aria-labelledby="cta-title">
 
             <!-- Slider -->
             <div class="slider-container">
@@ -408,7 +411,7 @@
                         Diversificada gastronomia, seja para um almoço de negócios, um final de semana em família ou um
                         jantar com amigos.
                     </p>
-                    <button class="call-to-action-button">Quero mais informações</button>
+                    <button class="scale call-to-action-button">Quero mais informações</button>
                 </div>
 
                 <div class="call-to-action-cards-container" role="list">
@@ -461,10 +464,10 @@
                 <img class="gallery-img" src="https://i.ibb.co/pr5jcp0t/23-1.jpg" alt="Área de convivência 4">
             </div>
 
-            <button class="btn-gallery">Veja mais</button>
+            <button class="scale btn-gallery">Veja mais</button>
         </section>
         <!-- ================= PLANTAS ================= -->
-        <section class="get-know-plants-container">
+        <section data-aos="fade-up" class="get-know-plants-container">
             <h2 class="unique-points-section-title">
                 Conheça as <span class="text-emphasis">Plantas</span>
             </h2>
@@ -534,10 +537,10 @@
                 </button>
             </div>
 
-            <button class="info-btn">QUERO MAIS INFORMAÇÕES</button>
+            <button class="scale info-btn">QUERO MAIS INFORMAÇÕES</button>
         </section>
         <!-- ================= CONTATO ================= -->
-        <section class="contacts-informations-container" aria-labelledby="contacts-title">
+        <section data-aos="fade-up" class="contacts-informations-container" aria-labelledby="contacts-title">
 
             <!-- Google Maps -->
             <div class="how-to-get-there-google-maps-container">
@@ -580,7 +583,7 @@
                     </div>
                 </div>
 
-                <button class="contacts-cta-btn">Quero saber mais</button>
+                <button class="scale contacts-cta-btn">Quero saber mais</button>
 
                 <p class="paragraph-description-3rd">
                     Nosso horário de atendimento está disponível de segunda a sexta, das 08h30 às 18h30.
@@ -590,7 +593,7 @@
 
         </section>
         <!-- ================= SOBRE O BROOKLIN ================= -->
-        <section class="about-the-brooklin-container" aria-labelledby="brooklin-title">
+        <section data-aos="fade-up" class="about-the-brooklin-container" aria-labelledby="brooklin-title">
 
             <!-- <img class="brooklin-image" src="https://i.ibb.co/Zp3DhkXj/ponte-brooklin.jpg"
                 alt="Ponte Estaiada no bairro do Brooklin, São Paulo" loading="lazy"> -->
@@ -621,11 +624,11 @@
                     O nome do bairro é uma referência ao distrito de Nova York, o Brooklyn.
                 </p>
 
-                <button class="brooklin-cta-btn">Agendar visita</button>
+                <button class="scale brooklin-cta-btn">Agendar visita</button>
             </div>
         </section>
         <!-- ================= SOBRE O HOSTER ================= -->
-        <section class="about-the-hoster-content" aria-labelledby="hoster-title">
+        <section data-aos="fade-up" class="about-the-hoster-content" aria-labelledby="hoster-title">
 
             <!-- Case de estudo -->
             <div class="hoster-details-container">
@@ -640,14 +643,17 @@
                         alt="Selo do desenvolvedor Lucas Lehm" loading="lazy">
                     <div class="paragraph-box">
                         <p class="paragraph-description p-center">
-                            Neste projeto você vê meu case de estudo de uma landing page para um lançamento imobiliário. A ideia
-                            foi adaptar um design existente e dar vida a ele com códigos, de forma responsiva, mostrando o
+                            Neste projeto você vê meu case de estudo de uma landing page para um lançamento imobiliário.
+                            A ideia
+                            foi adaptar um design existente e dar vida a ele com códigos, de forma responsiva, mostrando
+                            o
                             serviço de forma simples e direta.
                         </p>
                         <p class="paragraph-description p-center">
                             Tudo foi desenvolvido de forma dinâmica, mantendo o máximo de fidelidade possível ao design
                             original. Esse projeto é um exemplo de como eu transformo ideias em páginas que funcionam de
-                            verdade, sempre tentando unir design e usabilidade. Explore e veja como cada detalhe foi pensado
+                            verdade, sempre tentando unir design e usabilidade. Explore e veja como cada detalhe foi
+                            pensado
                             para melhorar a experiência de quem visita!
                         </p>
                     </div>
@@ -676,34 +682,10 @@
                 </div>
 
                 <div class="google-comments">
-                    <article class="comment">
-                        <header class="comment-box-header">
-                            <div class="user-information">
-                                <div class="profile-pic" aria-hidden="true"></div>
-                                <div class="user-name-information">
-                                    <p class="user-name">Arnaldo</p>
-                                    <time class="comment-date" datetime="2025-02-04">04/02/2025</time>
-                                </div>
-                            </div>
-                            <img class="google-logo-icon" src="https://i.ibb.co/BVqZGSLY/Google-G-logo-svg.png"
-                                alt="Logo Google" loading="lazy" aria-hidden="true">
-                        </header>
 
-                        <img class="five-stars-image-comments"
-                            src="https://i.ibb.co/VWH94nLD/five-stars-rating-icon-png.webp" alt="5 estrelas"
-                            loading="lazy" aria-hidden="true">
-
-                        <p class="comment-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates doloribus numquam
-                            explicabo! Nulla,
-                            modi error! Pariatur deserunt vero deleniti natus rerum quos amet atque accusantium delectus
-                            est. Velit,
-                            asperiores quas.
-                        </p>
-                    </article>
                 </div>
 
-                <a class="see-more-comments-btn"
+                <a class="scale see-more-comments-btn"
                     href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0rDQtSCpKqcg1YLRSNaiwNElONTU0S7YwTLZISU42tzKoMDQyNDawSLQwNE40MDJMNPbiT8wtSC1KVUgqys_PzsnMAwDemBU0&q=ampere+brooklin&rlz=1C1ONGR_pt-PTBR1159BR1159&oq=ampere+bbroo&gs_lcrp=EgZjaHJvbWUqDwgBEC4YDRivARjHARiABDIGCAAQRRg5Mg8IARAuGA0YrwEYxwEYgAQyCQgCEAAYDRiABDIJCAMQABgNGIAEMggIBBAAGA0YHjIICAUQABgNGB4yCAgGEAAYDRgeMgoIBxAAGAUYDRgeMgoICBAAGAgYDRge0gEIMzAzMWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x94ce516c81c8dcc7:0x121308a813a021a3,1,,,"
                     target="_blank" rel="nofollow noopener noreferrer" aria-label="Ver mais comentários no Google">
                     Ver mais
@@ -712,7 +694,7 @@
             </div>
         </section>
         <!-- ================= DUVIDAS E FINALIZAÇÃO ================= -->
-        <section class="doubts-container" aria-labelledby="doubts-title-section">
+        <section data-aos="fade-up" class="doubts-container" aria-labelledby="doubts-title-section">
 
             <div class="doubts-main-content">
 
@@ -729,7 +711,7 @@
                         possível.</strong>
                 </p>
 
-                <button class="doubts-cta-button">Quero mais informações</button>
+                <button class="scale doubts-cta-button">Quero mais informações</button>
 
             </div>
         </section>
@@ -762,6 +744,9 @@
     </footer>
 
 
+    <script>
+        AOS.init();
+    </script>
     <script src="assets/scripts/slider.js"></script>
     <script src="assets/scripts/script.js"></script>
 </body>

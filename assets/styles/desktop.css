@@ -51,6 +51,7 @@
         flex-direction: column;
         align-items: center;
         padding: 1.2em 0em;
+        background-image: radial-gradient(circle, var(--color12) 10%, transparent 50%);
     }
 
     .about-the-project-texts {
@@ -190,6 +191,7 @@
     .next {
         display: block;
     }
+
 
     .call-to-action-information {
         margin: 2em 0;
@@ -365,5 +367,38 @@
         padding: 1em 3em;
         width: 700px;
     }
+
+    .google-comments {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .back-to-top-btn,
+    .WhatsApp-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .back-to-top-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 1.5em;
+        left: 2%;
+    }
+
+    .WhatsApp-btn {
+        bottom: 1.5em;
+        right: 2%;
+    }
+
+    .WhatsApp-btn>i {
+        font-size: 2.5em;
+    }
+
+    .scale:hover {
+    cursor: pointer;
+    transition: all ease .2s;
+    transform: scale(1.02);
+}
 
 }
