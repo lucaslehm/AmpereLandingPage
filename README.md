@@ -19,7 +19,7 @@ O projeto combina as três tecnologias fundamentais do front-end para entregar u
 
 ## 🖼️ Preview
 
-![Preview do projeto](.assets/images/preview.png)
+![Preview do projeto](assets/images/preview.png)
 
 ---
 
